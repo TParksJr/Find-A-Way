@@ -1,8 +1,104 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> hello world</title>
-    </head>
-    <body>
-        <p>this is a paragraph.</p>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Find-A-Way</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="text-center">Find-A-Way</h1>
+        <p class="text-center">We'll help you find a way to your destination that is cost efficient.</p>
+        <nav class="navbar navbar-light">
+            <div>
+                <a class="nav-item nav-link" href="#">HOME
+                </a> &nbsp; | &nbsp;
+                <a class="nav-item" href="profile.html" class="navbar">PROFILE
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="name">
+                            Current Location
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-location-arrow">
+                                </i>
+                            </div>
+                            <input class="form-control" id="name" name="name" placeholder="e.g., O.I.S.E Library" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">
+                            Destination
+                            <span class="asteriskField">
+                                *
+                            </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-map-marker">
+                                </i>
+                            </div>
+                            <input class="form-control" id="email" name="email" placeholder="Trinity Bellwoods" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="subject">
+                            Departure Time
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o">
+                                </i>
+                            </div>
+                            <input class="form-control" id="subject" name="subject" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="number">
+                            No. of People
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-users">
+                                </i>
+                            </div>
+                            <input class="form-control" id="number" name="number" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>

@@ -1,13 +1,13 @@
 $(function() {
 
     console.log("ready");
-    
+
     //declaring variables
     var currentLocation = "",
         destination = "",
-        startLon = 0,
+        startLng = 0,
         startLat = 0,
-        endLon = 0,
+        endLng = 0,
         endLat = 0;
         userName = "",
         departureTime = "",
@@ -19,7 +19,7 @@ $(function() {
         googleGeocodeAPIKey = "AIzaSyCPSBM6KMAJJxjGS9vfrJblGzVKfD26VbE",
         googleMapsAPIKey = "AIzaSyBS-0csDaAZvjBkMpoKI0YaAA3t0BJw1z8",
         googleURL = "";
-    
+
     //initializing Firebase
     var config = {
         apiKey: "AIzaSyDLiMqIB_sTo5BmeluSCwtwBB0r0cKiQ0U",
@@ -30,11 +30,32 @@ $(function() {
         messagingSenderId: "157899091270"
     };
     firebase.initializeApp(config);
-    
+
     var database = firebase.database();
 
+    //once lat and long have been stored, use them to do a call to the Uber API
+    function uberAPICall() {
+
+        //make AJAX call to Uber API
+        $.ajax({
+            url: "https://api.uber.com/v1/estimates/price",
+            headers: {
+            Authorization: "Token " + uberServerToken
+            },
+            data: {
+                start_latitude: startLat,
+                start_longitude: startLng,
+                end_latitude: endLat,
+                end_longitude: endLng
+            },
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    };
+
     //on click event for form submission
-    $("#submit").on("click", function(event) {
+    $("#submit").on("click", function (event) {
 
         event.preventDefault();
 
@@ -60,28 +81,35 @@ $(function() {
 
         //make AJAX call to Google Geocode API
         $.ajax({
-            url: googleURLStart,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-            console.log(response.results[0].geometry.location);
-        });
-
-        //make AJAX call to Google Geocode API
-        $.ajax({
             url: googleURLEnd,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            console.log(response.results[0].geometry.location);
+
+            endLat = response.results[0].geometry.location.lat;
+            endLng = response.results[0].geometry.location.lng;
+
+            console.log(endLat);
+            console.log(endLng);
+
+            uberURL = "https://api.uber.com/v1.2/products?latitude=" + endLat + "&longitude=" + endLng;
+            
         });
 
-        //make AJAX call to Uber API
+        //make AJAX call to Google Geocode API
         $.ajax({
-            url: uberURL,
+            url: googleURLStart,
             method: "GET"
         }).then(function (response) {
             console.log(response);
+
+            startLat = response.results[0].geometry.location.lat;
+            startLng = response.results[0].geometry.location.lng;
+
+            console.log(startLat);
+            console.log(startLng);
+
+            uberAPICall();
         });
     });
 });

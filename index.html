@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Find-A-Way</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="main.js"></script>
     <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 </head>
@@ -34,7 +34,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <form method="post">
                     <div class="form-group ">
-                        <label class="control-label requiredField" for="name">
+                        <label class="control-label requiredField" for="currentLocation">
                             Current Location
                             <span class="asteriskField">
                                 *
@@ -45,11 +45,11 @@
                                 <i class="fa fa-location-arrow">
                                 </i>
                             </div>
-                            <input class="form-control" id="name" name="name" placeholder="e.g., O.I.S.E Library" type="text" />
+                            <input class="form-control" id="currentLocation" name="currentLocation" placeholder="e.g., O.I.S.E Library" type="text" />
                         </div>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label requiredField" for="email">
+                        <label class="control-label requiredField" for="destination">
                             Destination
                             <span class="asteriskField">
                                 *
@@ -60,11 +60,11 @@
                                 <i class="fa fa-map-marker">
                                 </i>
                             </div>
-                            <input class="form-control" id="email" name="email" placeholder="Trinity Bellwoods" type="text" />
+                            <input class="form-control" id="destination" name="destination" placeholder="Trinity Bellwoods" type="text" />
                         </div>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label " for="subject">
+                        <label class="control-label " for="departureTime">
                             Departure Time
                         </label>
                         <div class="input-group">
@@ -72,11 +72,11 @@
                                 <i class="fa fa-clock-o">
                                 </i>
                             </div>
-                            <input class="form-control" id="subject" name="subject" type="text" />
+                            <input class="form-control" id="departureTime" name="departureTime" type="time" />
                         </div>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label " for="number">
+                        <label class="control-label " for="passengers">
                             No. of People
                         </label>
                         <div class="input-group">
@@ -84,12 +84,12 @@
                                 <i class="fa fa-users">
                                 </i>
                             </div>
-                            <input class="form-control" id="number" name="number" type="text" />
+                            <input class="form-control" id="passengers" name="passengers" type="number" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <button class="btn btn-primary " name="submit" type="submit">
+                            <button class="btn btn-primary " id="submit" name="submit" type="submit">
                                 Submit
                             </button>
                         </div>
@@ -98,6 +98,10 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="assets/javascript/app.js"></script>
 
 </body>
 

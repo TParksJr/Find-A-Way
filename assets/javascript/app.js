@@ -112,8 +112,16 @@ $(function () {
                 console.log(startLat);
                 console.log(startLng);
 
-                uberAPICall();
-            });
-        }, 10000);
+            uberAPICall();
+        });
+        database.ref().push({
+            currentLocation : currentLocation,
+            destination : destination,
+            departureTime : departureTime,
+            passengers : passengers,
+            timeAdded: firebase.database.ServerValue.TIMESTAMP;
+    });
+   }, 10000);
+
     });
 });

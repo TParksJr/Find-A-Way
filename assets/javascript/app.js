@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
     console.log("ready");
 
@@ -9,7 +9,7 @@ $(function() {
         startLat = 0,
         endLng = 0,
         endLat = 0;
-        userName = "",
+    userName = "",
         departureTime = "",
         arrivalTime = "",
         passengers = 0,
@@ -36,21 +36,22 @@ $(function() {
     //once lat and long have been stored, use them to do a call to the Uber API
     function uberAPICall() {
 
-        //make AJAX call to Uber API
+        //make AJAX call to Uber API ***does not currently work***
         $.ajax({
-            url: "https://api.uber.com/v1/estimates/price",
+            url: "https://api.uber.com/v1.2/estimate",
+            method: "POST",
             headers: {
-            Authorization: "Token " + uberServerToken
+                Authorization: "Bearer " + uberServerToken,
             },
             data: {
                 start_latitude: startLat,
                 start_longitude: startLng,
                 end_latitude: endLat,
-                end_longitude: endLng
-            },
-            success: function (response) {
-                console.log(response);
+                end_longitude: endLng,
+                product_id: "821415d8-3bd5-4e27-9604-194e4359a449"
             }
+        }).then(function(response) {
+            console.log(response);
         });
     };
 
@@ -73,6 +74,7 @@ $(function() {
         currentLocation = currentLocation.split(" ").join("+");
         destination = destination.split(" ").join("+");
 
+
         console.log(currentLocation);
         console.log(destination);
 
@@ -93,23 +95,25 @@ $(function() {
             console.log(endLng);
 
             uberURL = "https://api.uber.com/v1.2/products?latitude=" + endLat + "&longitude=" + endLng;
-            
+
         });
 
-        //make AJAX call to Google Geocode API
-        $.ajax({
-            url: googleURLStart,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
+        //make AJAX call to Google Geocode API, set to be delayed
+        $(document).setTimeout(function() {
+            $.ajax({
+                url: googleURLStart,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
 
-            startLat = response.results[0].geometry.location.lat;
-            startLng = response.results[0].geometry.location.lng;
+                startLat = response.results[0].geometry.location.lat;
+                startLng = response.results[0].geometry.location.lng;
 
-            console.log(startLat);
-            console.log(startLng);
+                console.log(startLat);
+                console.log(startLng);
 
-            uberAPICall();
-        });
+                uberAPICall();
+            });
+        }, 10000);
     });
 });

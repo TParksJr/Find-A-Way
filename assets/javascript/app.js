@@ -19,6 +19,12 @@ $(function () {
         googleGeocodeAPIKey = "AIzaSyCPSBM6KMAJJxjGS9vfrJblGzVKfD26VbE",
         googleMapsAPIKey = "AIzaSyBS-0csDaAZvjBkMpoKI0YaAA3t0BJw1z8",
         googleURL = "";
+    //variables for parking time in UNIX
+        var startTimeAsUNIXString = moment().format('X')
+        console.log(startTimeAsUNIXString);
+        //var startTimeAsUNIXNumber = parseInt
+        var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
+        console.log(endTimeAsUNIXstring);
 
     //initializing Firebase
     var config = {
@@ -119,7 +125,7 @@ $(function () {
             destination : destination,
             departureTime : departureTime,
             passengers : passengers,
-            timeAdded: firebase.database.ServerValue.TIMESTAMP;
+            timeAdded: firebase.database.ServerValue.TIMESTAMP
     });
    }, 10000);
 

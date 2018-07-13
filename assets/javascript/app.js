@@ -19,12 +19,15 @@ $(function () {
         googleGeocodeAPIKey = "AIzaSyCPSBM6KMAJJxjGS9vfrJblGzVKfD26VbE",
         googleMapsAPIKey = "AIzaSyBS-0csDaAZvjBkMpoKI0YaAA3t0BJw1z8",
         googleURL = "";
+
+
     //variables for parking time in UNIX
-        var startTimeAsUNIXString = moment().format('X')
-        console.log(startTimeAsUNIXString);
-        //var startTimeAsUNIXNumber = parseInt
-        var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
-        console.log(endTimeAsUNIXstring);
+      //  var startParkingString = moment(departureTime).add(30,"minutes").format('LT')
+       // console.log(startParkingString);
+        //var startParkingNumber = parseFloat(startTimeAsUNIXString);
+        //console.log("UNIX NUMBER:"+startTimeAsUNIXNumber)
+       // var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
+        //console.log(endTimeAsUNIXstring);
 
     //initializing Firebase
     var config = {
@@ -38,7 +41,8 @@ $(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
-
+ 
+    
     //once lat and long have been stored, use them to do a call to the Uber API
     function uberAPICall() {
 
@@ -130,4 +134,5 @@ $(function () {
    }, 10000);
 
     });
+   
 });

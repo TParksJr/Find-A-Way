@@ -19,12 +19,16 @@ $(function () {
         googleGeocodeAPIKey = "AIzaSyCPSBM6KMAJJxjGS9vfrJblGzVKfD26VbE",
         googleMapsAPIKey = "AIzaSyBS-0csDaAZvjBkMpoKI0YaAA3t0BJw1z8",
         googleURL = "";
+
+
     //variables for parking time in UNIX
-        var startTimeAsUNIXString = moment().format('X')
-        console.log(startTimeAsUNIXString);
-        //var startTimeAsUNIXNumber = parseInt
-        var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
-        console.log(endTimeAsUNIXstring);
+
+       var startTimeAsUNIXString = moment().format('X');
+        console.log("Unix start time:"+startTimeAsUNIXString);
+        var startTimeAsUNIXNumber = parseFloat(startTimeAsUNIXString)
+        console.log("ParseFloat Unix Number:"+startTimeAsUNIXNumber)
+       // var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
+        //console.log(endTimeAsUNIXstring);
 
     //initializing Firebase
     var config = {
@@ -74,7 +78,7 @@ $(function () {
 
         console.log(currentLocation);
         console.log(destination);
-        console.log(departureTime);
+        console.log("Departure Time:"+departureTime);
         console.log(passengers);
 
         currentLocation = currentLocation.split(" ").join("+");
@@ -105,7 +109,7 @@ $(function () {
         });
 
         //make AJAX call to Google Geocode API, set to be delayed
-        $(document).setTimeout(function() {
+       setTimeout(function() {
             $.ajax({
                 url: googleURLStart,
                 method: "GET"

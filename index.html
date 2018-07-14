@@ -40,7 +40,7 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-md-12">
                 <form method="post">
                     <div class="form-group ">
                         <label class="control-label requiredField" for="currentLocation">
@@ -104,6 +104,34 @@
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-6 col-sm-6 col-md-12">
+                <br>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Uber X</th>
+                            <th scope="col">Uber Pool</th>
+                            <th scope="col">Driving</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Estimated Price</th>
+                            <td id="uberXPrice"></td>
+                            <td id="uberPoolPrice"></td>
+                            <td id="drivingPrice"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Estimated Duration (minutes)</th>
+                            <td id="uberXDuration"></td>
+                            <td id="uberPoolDuration"></td>
+                            <td id="drivingDuration"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

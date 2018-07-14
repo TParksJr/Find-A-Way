@@ -27,26 +27,8 @@ $(function () {
         googleURL = "";
 
 
-    //variables for parking time in UNIX
-    //  var startParkingString = moment(departureTime).add(30,"minutes").format('LT')
-    // console.log(startParkingString);
-    //var startParkingNumber = parseFloat(startTimeAsUNIXString);
-    //console.log("UNIX NUMBER:"+startTimeAsUNIXNumber)
-    // var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
-    //console.log(endTimeAsUNIXstring);
-
     //initializing Firebase
-    var config = {
-        apiKey: "AIzaSyDLiMqIB_sTo5BmeluSCwtwBB0r0cKiQ0U",
-        authDomain: "project-1-c6c0c.firebaseapp.com",
-        databaseURL: "https://project-1-c6c0c.firebaseio.com",
-        projectId: "project-1-c6c0c",
-        storageBucket: "project-1-c6c0c.appspot.com",
-        messagingSenderId: "157899091270"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
+   var database = firebase.database();
 
 
     //once lat and long have been stored, use them to do a call to the Uber API
@@ -132,15 +114,15 @@ $(function () {
 
                 uberAPICall();
             });
-            /*
-            database.ref().push({
+            
+           database.ref().push({
                 currentLocation : currentLocation,
                 destination : destination,
                 departureTime : departureTime,
                 passengers : passengers,
                 timeAdded: firebase.database.ServerValue.TIMESTAMP
             });
-            */
+            
         }, 1000);
     });
 });

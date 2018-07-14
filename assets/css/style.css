@@ -1,5 +1,5 @@
 body {
-    font-family: 'Concert One', cursive;
+    font-family: 'Crete Round', serif;
     background: linear-gradient(to bottom, #a0522d 0%, #ffffcc 100%);
     height: 100%;
     width:100%;
@@ -16,18 +16,19 @@ body {
     border-radius: 5px;
     margin-bottom:0px;
     color: white;
+    text-shadow: 2px 2px black;
 }
 
 nav {
-    font-weight: bold;
-}
+    font-weight: bolder;
+}   
 
 container {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 form {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 table {
@@ -36,6 +37,10 @@ table {
 
 #submit {
     background-color: #a0522d;
+}
+
+.AboutUs {
+    font-weight: bold;
 }
 
 .column {

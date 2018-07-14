@@ -58,6 +58,7 @@ $(function () {
             //parse data from Uber API call and converting duration from seconds to minutes
                 distance = response.prices[5].distance;
                 uberXDuration = response.prices[5].duration / 60;
+                
             var uberXPrice = response.prices[5].estimate,
                 uberPoolDuration = (response.prices[2].duration / 60) + "+",
                 uberPoolPrice = response.prices[2].estimate;

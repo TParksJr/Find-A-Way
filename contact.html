@@ -9,10 +9,14 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!--Added link to reset.css-->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"> -->
+    <!--Added link to the stylesheet-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <!--Added link to Font Awesome for the icons-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Added link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
 
 </head>
 
@@ -25,9 +29,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12">
+
                     <h1 class="h1">
                         Contact us
-                        <small>Feel free to contact us</small>
+                        <p class="text-center"> We're looking forward to hearing from you! </p>
+
                     </h1>
                 </div>
             </div>
@@ -78,7 +84,7 @@
                                         Subject</label>
                                     <select id="subject" name="subject" class="form-control" required="required">
                                         <option value="na" selected="">Choose One:</option>
-                                        <option value="service">General Customer Service</option>
+                                        <option value="inquiry">General Inquiry</option>
                                         <option value="suggestions">Suggestions</option>
                                         <option value="product">Product Support</option>
                                     </select>
@@ -92,7 +98,9 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+
+                                <button type="submit" class="btn btn-primary pull-right" id="submit">
+
                                     Send Message</button>
                             </div>
                         </div>
@@ -101,5 +109,25 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <footer class="page-footer footer navbar-fixed-bottom">
+                    <p>© Copyright 2018</p>
+                </footer>
+            </div>
+        </div>
+    </div> 
+
+    <!--Added link to JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!--Added link to the Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!--Added link to Javascript-->
+    <script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/contact.js"></script>
 </body>
+
 </html>

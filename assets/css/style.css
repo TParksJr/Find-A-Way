@@ -1,0 +1,74 @@
+body {
+    font-family: 'Concert One', cursive;
+    background: linear-gradient(to bottom, #a0522d 0%, #ffffcc 100%);
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat;
+}
+
+
+.jumbotron {
+    background-image: url("../images/jumbotron.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;
+    height: 250px;
+    border-radius: 5px;
+    margin-bottom:0px;
+    color: white;
+}
+
+nav {
+    font-weight: bold;
+}
+
+container {
+    font-weight: bold;
+}
+
+form {
+    font-weight: bold;
+}
+
+table {
+    font-weight: bold;
+}
+
+#submit {
+    background-color: #a0522d;
+}
+
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.tyson {
+    background-color: white;
+}
+
+#image {
+    border-radius: 50%;
+}
+
+h2 {
+    font-style:italic;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #a0522d;
+    text-align: center;
+}
+
+
+
+
+
+
+

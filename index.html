@@ -9,10 +9,14 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!--Added link to reset.css-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" >
+    <!--Added link to the stylesheet-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <!--Added link to Font Awesome for the icons-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Added link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
 
 </head>
 
@@ -40,7 +44,7 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-md-12">
                 <form method="post">
                     <div class="form-group ">
                         <label class="control-label requiredField" for="currentLocation">
@@ -54,7 +58,7 @@
                                 <i class="fa fa-location-arrow">
                                 </i>
                             </div>
-                            <input class="form-control" id="currentLocation" name="currentLocation" placeholder="e.g., O.I.S.E Library" type="text" />
+                            <input class="form-control" id="currentLocation" name="currentLocation" placeholder="Please include city name" type="text" />
                         </div>
                     </div>
                     <div class="form-group ">
@@ -69,7 +73,7 @@
                                 <i class="fa fa-map-marker">
                                 </i>
                             </div>
-                            <input class="form-control" id="destination" name="destination" placeholder="Trinity Bellwoods" type="text" />
+                            <input class="form-control" id="destination" name="destination" placeholder="Please include city name" type="text" />
                         </div>
                     </div>
                     <div class="form-group ">
@@ -105,9 +109,38 @@
                     </div>
                 </form>
             </div>
+            <div class="col-md-6 col-sm-6 col-md-12">
+                <br>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Uber X</th>
+                            <th scope="col">Uber Pool</th>
+                            <th scope="col">Driving</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Estimated Price</th>
+                            <td id="uberXPrice"></td>
+                            <td id="uberPoolPrice"></td>
+                            <td id="drivingPrice"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Estimated Duration (minutes)</th>
+                            <td id="uberXDuration"></td>
+                            <td id="uberPoolDuration"></td>
+                            <td id="drivingDuration"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="container-fluid">
+
         <div class="row">
             <div class="col-md-12">
                 <footer class="page-footer footer navbar-fixed-bottom">
@@ -115,12 +148,17 @@
                 </footer>
             </div>
         </div>
-    </div>
+    </div> 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <script src="assets/javascript/app.js"></script>
+                <!--Added link to JQuery-->
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin="anonymous"></script>
+                <!--Added link to the Firebase-->
+                <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+                <!--Added link to Javascript-->
+                <script src="assets/javascript/app.js"></script>
+                <!--Added link to Contact Javascript-->
+                <script src="assets/javascript/contact.js"></script>
 
 </body>
 

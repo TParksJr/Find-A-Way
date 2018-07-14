@@ -15,6 +15,10 @@ $(function () {
         passengers = 1,
         parkingPrice = 0,
         drivingPrice = 0,
+        parkingPrices = 0,
+        distance = 0,
+        uberXDuration = 0,
+        parkWhizAPIKey = "c58c2efc75d096c933b115d1d19e590bc31c9e21",
         uberClientID = "ojF1HzMnEg2VGCONbMWdqnjUdsDxJmsU",
         uberServerToken = "AWIcb5H_Chv5WH7cV7kyW95D-nM1Tb8n2vRbgMlG",
         uberURL = "",
@@ -42,6 +46,12 @@ $(function () {
          var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
          console.log(endTimeAsUNIXstring);
         
+    //  var startParkingString = moment(departureTime).add(30,"minutes").format('LT')
+    // console.log(startParkingString);
+    //var startParkingNumber = parseFloat(startTimeAsUNIXString);
+    //console.log("UNIX NUMBER:"+startTimeAsUNIXNumber)
+    // var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
+    //console.log(endTimeAsUNIXstring);
 
     //initializing Firebase
     var config = {
@@ -56,7 +66,6 @@ $(function () {
 
     var database = firebase.database();
  
-    
     //once lat and long have been stored, use them to do a call to the Uber API
     function uberAPICall() {
 
@@ -76,13 +85,44 @@ $(function () {
             //calculate the cost duration using a constant average speed of 55 km/h 
             //var drivingDuration = Math.ceil((distance / 55) * 60);
 
+
+            //parse data from Uber API call and converting duration from seconds to minutes
+                distance = response.prices[5].distance;
+                uberXDuration = response.prices[5].duration / 60;
+                
+            var uberXPrice = response.prices[5].estimate,
+                uberPoolDuration = (response.prices[2].duration / 60) + "+",
+                uberPoolPrice = response.prices[2].estimate;
+
             //fill in table with Uber price and duration
             $("#uberXPrice").text(uberXPrice);
             $("#uberXDuration").text(uberXDuration);
             $("#uberPoolPrice").text(uberPoolPrice);
             $("#uberPoolDuration").text(uberPoolDuration);
+
             //$("#drivingPrice").text(drivingPrice);
             //$("#drivingDuration").text(drivingDuration);
+
+            parkwhizAPICall();
+        });
+    };
+
+    function parkwhizAPICall() {
+        $.get("https://api.parkwhiz.com/v4/quotes/?q=coordinates:" + endLat + "," + endLng + "&start_time=2018-07-14T12:00&end_time=2018-07-14T13:00&api_key=" + parkWhizAPIKey, function (response) {
+            console.log(response);
+            for (i = 0; i < 3; i++) {
+                parkingPrice += parseInt(response[i].purchase_options[0].price.USD);
+            }
+            parkingPrice = parkingPrice / 3;
+        
+            //calculate the cost of driving using constant 12.9 c/km
+            var drivingPrice = Math.round((distance * 0.129) + parkingPrice);
+
+            //calculate the cost duration using a constant average speed of 55 km/h 
+            var drivingDuration = Math.ceil((distance / 55) * 60);
+
+            $("#drivingPrice").text(drivingPrice);
+            $("#drivingDuration").text(uberXDuration);
         });
     };
 
@@ -105,6 +145,10 @@ $(function () {
         //reset form after values are taken
         $("form").trigger("reset");
 
+
+        //reset form after values are taken
+        $("form").trigger("reset");
+
         //convert to the form that the Google Geocode API takes
         currentLocation = currentLocation.split(" ").join("+");
         destination = destination.split(" ").join("+");
@@ -115,13 +159,20 @@ $(function () {
         $.ajax({
             url: googleURLEnd,
             method: "GET"
+
         }).then(function(response) {
+
+        }).then(function (response) {
             endLat = response.results[0].geometry.location.lat;
             endLng = response.results[0].geometry.location.lng;
         });
 
         //make AJAX call to Google Geocode API, set to be delayed
        setTimeout(function() {
+
+        //make AJAX call to Google Geocode API, set to be delayed, then triggers uber API call
+        setTimeout(function () {
+
             $.ajax({
                 url: googleURLStart,
                 method: "GET"
@@ -172,6 +223,17 @@ $(function () {
             passengers : passengers,
             timeAdded: firebase.database.ServerValue.TIMESTAMP
         });
+                uberAPICall();
+            });
+            
+            database.ref().push({
+                currentLocation : currentLocation,
+                destination : destination,
+                departureTime : departureTime,
+                passengers : passengers,
+                timeAdded: firebase.database.ServerValue.TIMESTAMP
+            });
+            
         }, 1000);
     });
 });

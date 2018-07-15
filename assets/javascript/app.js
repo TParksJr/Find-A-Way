@@ -27,6 +27,8 @@ $(function () {
         googleURL = "";
 
 
+
+
     //variables for parking time in UNIX
 
     var queryURL = "https://api.parkwhiz.com/search/?lat=" + endLat + "&lng=" + endLng + "&start=" + startTimeAsUNIXString + "&end=" + endTimeAsUNIXstring + "&key=c338b416a2579b7f332aca83bdce28d417c8a7ce";
@@ -45,13 +47,6 @@ $(function () {
          var startTimeAsUNIXNumber = parseFloat(startTimeAsUNIXString);
          var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
          console.log(endTimeAsUNIXstring);
-        
-    //  var startParkingString = moment(departureTime).add(30,"minutes").format('LT')
-    // console.log(startParkingString);
-    //var startParkingNumber = parseFloat(startTimeAsUNIXString);
-    //console.log("UNIX NUMBER:"+startTimeAsUNIXNumber)
-    // var endTimeAsUNIXstring = startTimeAsUNIXNumber + 1800;
-    //console.log(endTimeAsUNIXstring);
 
     //initializing Firebase
     var config = {
@@ -65,7 +60,7 @@ $(function () {
     firebase.initializeApp(config);
 
     var database = firebase.database();
- 
+
     //once lat and long have been stored, use them to do a call to the Uber API
     function uberAPICall() {
 
@@ -226,6 +221,7 @@ $(function () {
                 uberAPICall();
             });
             
+
             database.ref().push({
                 currentLocation : currentLocation,
                 destination : destination,

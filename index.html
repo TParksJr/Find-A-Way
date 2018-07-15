@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--DO NOT CHANGE ID TAGS PLEASE-->
 <html>
 
 <head>
@@ -10,14 +11,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <!--Added link to reset.css-->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
     <!--Added link to the stylesheet-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
     <!--Added link to Font Awesome for the icons-->
     <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--Added link to Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
 </head>
 
 <body>
@@ -76,8 +76,8 @@
                             <input class="form-control" id="destination" name="destination" placeholder="Please include city name" type="text" />
                         </div>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="departureTime">
+                    <div class="form-group">
+                        <label class="control-label" for="departureTime">
                             Departure Time
                         </label>
                         <div class="input-group">
@@ -136,6 +136,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <span class="asteriskField">
+                    *Driving costs are calculated on the basis of hourly parking and current gas price.
+                </span>
             </div>
         </div>
     </div>
@@ -148,18 +151,40 @@
                 </footer>
             </div>
         </div>
-    </div> 
 
+    </div> 
+<!--Added link to the Firebase-->
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDLiMqIB_sTo5BmeluSCwtwBB0r0cKiQ0U",
+      authDomain: "project-1-c6c0c.firebaseapp.com",
+      databaseURL: "https://project-1-c6c0c.firebaseio.com",
+      projectId: "project-1-c6c0c",
+      storageBucket: "project-1-c6c0c.appspot.com",
+      messagingSenderId: "157899091270"
+    };
+    firebase.initializeApp(config);
+  </script>
                 <!--Added link to JQuery-->
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                     crossorigin="anonymous"></script>
-                <!--Added link to the Firebase-->
-                <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
                 <!--Added link to Javascript-->
                 <script src="assets/javascript/app.js"></script>
                 <!--Added link to Contact Javascript-->
-                <script src="assets/javascript/contact.js"></script>
+      <script src="assets/javascript/contact.js"></script>
+    </div>
+
+    <!--Added link to JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!--Added link to the Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!--Added link to Javascript-->
+    <script src="assets/javascript/app.js"></script>
+    <!--Added link to Contact Javascript-->
+    <script src="assets/javascript/contact.js"></script>
 
 </body>
-
 </html>

@@ -16,7 +16,7 @@
     <!--Added link to Font Awesome for the icons-->
     <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--Added link to Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:700" rel="stylesheet">
 
 </head>
 
@@ -99,7 +99,7 @@
                             </div>
                             <div class="col-md-12">
 
-                                <button type="submit" class="btn btn-primary pull-right" id="submit">
+                                <button type="submit" class="btn btn-primary pull-right" id="contactUsBtn">
 
                                     Send Message</button>
                             </div>
@@ -118,16 +118,28 @@
                 </footer>
             </div>
         </div>
-    </div> 
+    </div>
 
     <!--Added link to JQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <!--Added link to the Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+   <script> 
+   var config = {
+    apiKey: "AIzaSyBa-7I3BFFAPGadRdaK6f-8LNEj8vwk5kQ",
+       authDomain: "contactform-c9d13.firebaseapp.com",
+       databaseURL: "https://contactform-c9d13.firebaseio.com",
+       projectId: "contactform-c9d13",
+       storageBucket: "contactform-c9d13.appspot.com",
+       messagingSenderId: "1048738125369"
+     };
+    firebase.initializeApp(config);
+     </script>
     <!--Added link to Javascript-->
-    <script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/app.js"></script>
 <script src="assets/javascript/contact.js"></script>
+
 </body>
 
 </html>

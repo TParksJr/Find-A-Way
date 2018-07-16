@@ -1,7 +1,7 @@
 body {
     font-family: 'Crete Round', serif;
     background-color: #d9ba8c;
-    height: 100%;
+    height:100%;
     width:100%;
     background-repeat: no-repeat;
 }
@@ -27,13 +27,42 @@ container {
     font-weight: bolder;
 }
 
-.profile {
-    box-sizing: content-box;
+.AboutUsWho {
+    display: inline-block;
     background-color: white;
-    width: 900px;
+    width: 800px;
     padding: 25px;
     margin: 25px;
     border-radius: 20px;
+    opacity: 0.8;
+    align-content: center;
+    float: left;
+
+}
+
+.AboutUsHow {
+    display: inline-block;
+    background-color: white;
+    width: 300px;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 20px;
+    opacity: 0.8;
+    align-content: center;
+    float: left;
+
+}
+
+.AboutUsWho {
+    display: inline-block;
+    background-color: white;
+    width: 300px;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 20px;
+    opacity: 0.8;
+    align-content: center;
+    float: left;
 }
 
 form {
@@ -48,15 +77,11 @@ table {
     background-color: #a0522d;
 }
 
-.AboutUs {
-    font-weight: bold;
-}
-
 .column {
     float: left;
     width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+    margin-bottom: 10px;
+    padding: 0 5px;
 }
 
 .tyson {
@@ -64,7 +89,8 @@ table {
 }
 
 #image {
-    border-radius: 50%;
+    border-radius: 20%;
+    /* border: solid 2px #a0522d; */
 }
 
 h2 {
@@ -93,7 +119,7 @@ h2 {
 @media only screen and (max-width: 320px) {
     body { 
         font-size: 2em; 
-        }
+    }
 }
 
 

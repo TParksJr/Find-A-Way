@@ -6,7 +6,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
 .jumbotron {
     background-image: url("../images/jumbotron.jpeg");
     background-repeat: no-repeat;
@@ -37,7 +36,6 @@ container {
     opacity: 0.8;
     align-content: center;
     float: left;
-
 }
 
 .AboutUsHow {
@@ -50,7 +48,6 @@ container {
     opacity: 0.8;
     align-content: center;
     float: left;
-
 }
 
 .AboutUsWho {
@@ -93,6 +90,10 @@ table {
     /* border: solid 2px #a0522d; */
 }
 
+.intern {
+    box-sizing: content-box;
+}
+
 h2 {
     font-family: 'Varela Round', sans-serif;
     font-weight: 900;
@@ -100,6 +101,7 @@ h2 {
 .AboutUsText {
     font-family: 'Varela Round', sans-serif;
 }
+
 .footer {
     position: fixed;
     left: 0;

@@ -1,6 +1,6 @@
 body {
     font-family: 'Crete Round', serif;
-    background: linear-gradient(to bottom, #a0522d 0%, #ffffcc 100%);
+    background-color: #d9ba8c;
     height: 100%;
     width:100%;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@ body {
 .jumbotron {
     background-image: url("../images/jumbotron.jpeg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center bottom;
     height: 250px;
     border-radius: 5px;
@@ -21,10 +21,19 @@ body {
 
 nav {
     font-weight: bolder;
-}   
+}  
 
 container {
     font-weight: bolder;
+}
+
+.profile {
+    box-sizing: content-box;
+    background-color: white;
+    width: 900px;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 20px;
 }
 
 form {
@@ -35,7 +44,7 @@ table {
     font-weight: bold;
 }
 
-#submit {
+#contactUsBtn {
     background-color: #a0522d;
 }
 
@@ -59,9 +68,12 @@ table {
 }
 
 h2 {
-    font-style:italic;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 900;
 }
-
+.AboutUsText {
+    font-family: 'Varela Round', sans-serif;
+}
 .footer {
     position: fixed;
     left: 0;
@@ -71,7 +83,18 @@ h2 {
     text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width:100%;
+    }
+}
 
+@media only screen and (max-width: 320px) {
+    body { 
+        font-size: 2em; 
+        }
+}
 
 
 

@@ -1,6 +1,6 @@
 $(function () {
 
-    console.log("ready");
+   //console.log("ready");
 
     //declaring variables
     var currentLocation = "",

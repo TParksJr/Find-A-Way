@@ -21,12 +21,15 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-sm">
         <h1 class="text-center">Find-A-Way</h1>
         <p class="text-center">We'll help you find a way to your destination that is cost efficient.</p>
     </div>
-    <nav class="navbar navbar-default">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <nav class="navbar navbar-default navbar-expand-sm">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                </button>
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
             <ul class="nav navbar-nav ">
                 <li class="active">
                     <a href="index.html">Home</a>
@@ -58,7 +61,7 @@
                                 <i class="fa fa-location-arrow">
                                 </i>
                             </div>
-                            <input class="form-control" id="currentLocation" name="currentLocation" placeholder="Central Park" type="text"/>
+                            <input class="form-control" id="currentLocation" name="currentLocation" placeholder="Please include Street Name and City" type="text"/>
                         </div>
                     </div>
                     <div class="form-group ">
@@ -73,7 +76,7 @@
                                 <i class="fa fa-map-marker">
                                 </i>
                             </div>
-                            <input class="form-control" id="destination" name="destination" placeholder="Brooklyn Bridge" type="text" />
+                            <input class="form-control" id="destination" name="destination" placeholder="Please include Street Name and City" type="text" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -137,7 +140,7 @@
                     </tbody>
                 </table>
                 <span class="asteriskField">
-                    *Driving costs are calculated on the basis of hourly parking and current gas price.
+                    *Driving costs are calculated on the basis of hourly parking and average gas price (US Dollar).
                 </span>
             </div>
         </div>

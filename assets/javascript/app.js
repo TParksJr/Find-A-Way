@@ -114,7 +114,7 @@ $(function () {
 
     */
 
-    /*
+    
 
     function getGas() {
         // console.log(endLat)
@@ -126,7 +126,8 @@ $(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
+            console.log(JSON.parse(response));
+            /*
             var gas = {};
             if (response.stations.length === 0) {
                 gas = { exists: false };
@@ -148,10 +149,10 @@ $(function () {
             drivingPrice = Math.round((distance * 12.9) + parkingPrice);
             $("#drivingPrice").text(drivingPrice);
             $("#drivingDuration").text(uberXDuration);
+            */
         })
     }
 
-    */
 
     //on click event for form submission
     $("#submit").on("click", function (event) {
